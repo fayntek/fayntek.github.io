@@ -1,0 +1,240 @@
+:root {
+  /* Colors (values taken from the original template) */
+  --color-bg: #080808;
+  --color-text: #f5f5f599;
+  --color-text-strong: #fdfdfd;
+  --color-border: #202020;
+  --color-surface: #0a0a0a;
+  --color-surface-hover: #202020;
+  --color-row-hover: #0c0c0c;
+  --color-primary: #4ce9b2;
+  --color-primary-soft: #4ce9b21f;
+
+  /* Typography */
+  --font-family: "Manrope", sans-serif;
+
+  /* Layout */
+  --content-width: 480px;
+  --radius-image: 1rem;
+  --radius-button: 0.5rem;
+  --radius-pill: 999px;
+  --transition-ease: cubic-bezier(.645, .045, .355, 1);
+}
+
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+p {
+  margin: 0;
+  line-height: 130%;
+}
+
+a {
+  color: var(--color-text-strong);
+  text-decoration: none;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: var(--radius-image);
+  vertical-align: middle;
+}
+
+.vflex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text-center { text-align: center; }
+
+
+.maincontent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.container.nogap { gap: 0; }
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linktree-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+
+
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 4px 16px 4px 4px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: var(--radius-pill);
+}
+
+.status-title {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.status-hflex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+.status {
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+.status-light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-pill);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.status-light-core {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+}
+
+
+
+.linktree {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  transition: background-color .35s var(--transition-ease);
+}
+
+.linktree:hover { background-color: var(--color-surface-hover); }
+
+.navlink {
+  margin-bottom: 0;
+  padding: 0;
+  font-weight: 300;
+  transition: color .2s var(--transition-ease);
+}
+
+
+
+
+.title-m {
+  margin-bottom: 10px;
+  color: var(--color-text-strong);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  padding: 1rem 10px;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project:hover { background-color: var(--color-row-hover); }
+
+.project-img {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.project-title {
+  margin-bottom: 8px;
+  color: var(--color-text-strong);
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+  .navlink {
+    display: block;
+    text-align: center;
+  }
+}
